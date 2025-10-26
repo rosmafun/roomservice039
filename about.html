@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Service - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo2"><img src="images/logo.png" alt="logo" class="logo"></a>
+            <ul>
+                <li><a href="work.html" class="nav-link">EDITORIAL</a></li>
+                <li><a href="commercial.html" class="nav-link">COMMERCIAL</a></li>
+                <li><a href="services.html" class="nav-link">SERVICES</a></li>
+                <li><a href="about.html" class="nav-link" style="background-color: #fbff83;">ABOUT</a></li>
+                <li><a href="clubhouse.html" class="nav-link">CLUBHOUSE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="header-mobile" id="header-mobile">
+        <nav class="navbar-mobile">
+            <a href="index.html" class="logo logo2"><img src="images/logo.png" alt="logo" style="width: 100%;" class="logo-mobile"></a>
+            <img src="images/hamburger.svg" class="hamburger" alt="indice" id="hamburger">
+        </nav>
+    </header>
+
+    <div class="mobile-links" id="mobile-links">
+    <img src="images/x.svg" style="width: 24px;" class="overlay-close" id="overlay-close" alt="close">
+    <ul>
+       <li><a href="work.html" class="nav-link">EDITORIAL</a></li>
+        <li><a href="commercial.html" class="nav-link">COMMERCIAL</a></li>
+        <li><a href="services.html" class="nav-link">SERVICES</a></li>
+        <li><a href="about.html" class="nav-link">ABOUT</a></li> 
+        <li><a href="clubhouse.html" class="nav-link">CLUBHOUSE</a></li> 
+    </ul>
+    </div>
+<!-- 
+    <section>
+        <p style="padding-bottom: 200px; height: 80vh;">
+            At Room Service 039, we bring national and international experience in image consulting and styling. We're known for shaping and developing both<span>brand and personal image.</span><br><br>
+Our trajectory allows us to deliver high-level solutions that blend creativity, deep industry insight, and personalized attention tailored to each client's goals.<br><br>
+RS039 is more than just a styling service – it is<span>strategic partner</span><em>to our clients.</em> We believe that an image is not just created; it's crafted and projected with purpose. When done thoughtfully, it becomes a key tool to enhance visibility, growth, and professional positioning.<br><br><br><br><br>
+MORE THAN A GUEST, MORE THAN A CLIENT
+        </p>
+    </section> -->
+
+    <div id="portfolio-container" style="padding-top: 160px;">
+    </div>
+
+    <footer>
+        <div class="footer-left-column">
+            <div class="footer-rrss">
+                <ul>
+                    <li><a href="https://www.instagram.com/roomservice039/">INSTAGRAM</a></li>
+                    <li><a href="mailto:info@roomservice039.com">CONTACT</a></li>
+                </ul>
+            </div>
+            <h1 class="footer-title">RS039 EST. 2023 MADRID, SPAIN</h1>
+        <div class="footer-right-column">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="work.html">EDITORIAL</a></li>
+                    <li><a href="commercial.html">COMMERCIAL</a></li>
+                    <li><a href="clubhouse.html">CLUBHOUSE</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+        </div>
+            </div>
+    </footer>
+
+
+
+    <footer class="mobile-footer">
+        <div class="footer-two">
+            <div class="footer-rrss">
+                <ul>
+                    <li><a href="https://www.instagram.com/roomservice039/">INSTAGRAM</a></li>
+                    <li><a href="mailto:info@roomservice039.com">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="work.html">EDITORIAL</a></li>
+                    <li><a href="commercial.html">COMMERCIAL</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="clubhouse.html">CLUBHOUSE</a></li>
+                </ul>
+            </div>
+        </div>
+            <img src="images/logo-footer2.svg" alt="RS039 EST. 2023 MADRID, SPAIN">
+    </footer>  
+
+
+  <!--  <iframe 
+    src="https://tvekicg.myportfolio.com/about" 
+    class="fullscreen-iframe"
+    title="Images - Adobe Portfolio - roomservice039">
+</iframe>
+-->
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cambiar enlace por el correcto
+            const initialURL = 'https://tvekicg.myportfolio.com/about';
+            
+            const container = document.getElementById('portfolio-container');
+    
+            const loadPortfolioContent = async (url) => {
+                container.innerHTML = '<p>Cargando...</p>';
+                try {
+                    const response = await fetch(`/.netlify/functions/fetch-portfolio?url=${encodeURIComponent(url)}`);
+                    if (!response.ok) {
+                        throw new Error(`Error en la respuesta del servidor: ${response.statusText}`);
+                    }
+                    const htmlContent = await response.text();
+                    container.innerHTML = htmlContent;
+                } catch (error) {
+                    container.innerHTML = `<p>No se pudo cargar el contenido. Inténtalo de nuevo más tarde.</p>`;
+                    console.error('Error:', error);
+                }
+            };
+    
+            container.addEventListener('click', (event) => {
+                const link = event.target.closest('a');
+                if (!link || link.target === '_blank') {
+                    return;
+                }
+                event.preventDefault();
+                const destinationURL = link.href;
+                loadPortfolioContent(destinationURL);
+            });
+    
+            loadPortfolioContent(initialURL);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+p {
+    text-align: center;
+    font-family: 'Helvetica Neue Bold';
+    font-size: 18px;
+    margin: 0 auto;
+    width: 1000px;
+    padding-top: 200px;
+}
+
+em {
+    text-align: center;
+    font-family: 'Helvetica Neue Bold';
+    font-size: 18px;
+}
+
+span {
+    padding: 0px 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+span, p {
+    font-family: helvetica, sans-serif !important;
+}
+
+.fashion {
+    padding-top: 160px;
+}
+
+.logo {
+    width: 164px !important;
+}
+
+
+@media (max-width: 617px) {
+    p {
+        width: 80%;
+    }
+}
+
+@media (min-width: 618px) and (max-width: 1054px) {
+    p {
+        width: 600px;
+    }
+}

@@ -1,0 +1,9 @@
+# Archivo de configuración para Netlify
+
+[functions]
+  # Esta línea le dice a Netlify que tus funciones estarán en la carpeta "netlify/functions"
+  directory = "netlify/functions/"
+
+[build]
+  # Esta línea le dice a Netlify que tu sitio web principal está en la carpeta actual
+  publish = "."

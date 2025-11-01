@@ -60,7 +60,7 @@ function changeNavbarOnScroll2() {
     } else {
         navbar2.classList.remove('scrolled');
         logo2.src = 'images/Logo-Clubhouse-negro.png'; 
-        hamburger.src = 'images/hamburger.svg';
+        hamburger.src = 'images/white-hamburger.svg';
 
         navbarLinks2.forEach(link => {
             link.classList.remove('scrolled-link');

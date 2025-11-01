@@ -29,6 +29,10 @@ span, p {
     width: 164px !important;
 }
 
+.clubhouse-navbar a:hover {
+    color: #fbff83 !important;
+    background-color: black !important;
+}
 
 @media (max-width: 617px) {
     p {

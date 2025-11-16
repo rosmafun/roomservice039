@@ -297,7 +297,7 @@ footer {
     width: 100vw;
     background-color: black;
     color: white;
-    padding: 5vw calc(5vw - 10px);
+    padding: 5vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
